@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SajiloSikai Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="animated-bg"></div>
+  
+  <section class="container">
+    <div class="login-box">
+      <!-- Theme Toggle -->
+      <div class="theme-toggle">
+        <input type="checkbox" id="toggle-dark-mode">
+        <label for="toggle-dark-mode"><i class="fas fa-moon"></i></label>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="user"><i class="fas fa-user"></i> User Login</button>
+        <button class="tab" data-tab="admin"><i class="fas fa-user-shield"></i> Admin Login</button>
+      </div>
+      
+      <!-- User Login Form -->
+      <div class="form-container active" id="user">
+        <div class="illustration">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <h1>USER LOGIN</h1>
+        <form action="../user panel/userPanel.html" method="post" aria-label="User Login Form">
+          <div class="input-group">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <input type="text" name="username" placeholder="USERNAME" required aria-label="Username" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            <input type="password" name="password" placeholder="PASSWORD" required aria-label="Password" />
+          </div>
+          <button type="submit">LOGIN</button>
+        </form>
+        <div class="options">
+          <a href="#" id="open-register">REGISTER</a>
+          <a href="#" id="open-forgot-user">FORGOT PASSWORD?</a>
+        </div>
+      </div>
+      
+      <!-- Admin Login Form -->
+      <div class="form-container" id="admin">
+        <div class="illustration">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h1>ADMIN LOGIN</h1>
+        <form action="../admin panel/admin-panel.html" method="post" aria-label="Admin Login Form">
+          <div class="input-group">
+            <i class="fas fa-id-badge" aria-hidden="true"></i>
+            <input type="text" name="admin_id" placeholder="ADMIN ID" required aria-label="Admin ID" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            <input type="password" name="password" placeholder="PASSWORD" required aria-label="Password" />
+          </div>
+          <button type="submit">LOGIN</button>
+        </form>
+        <div class="options">
+          <a href="#" id="open-forgot-admin">FORGOT PASSWORD?</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+ <!-- Registration Modal -->
+ <div id="register-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-register">&times;</span>
+    <h2>Rgister</h2>
+    <form id="registration-form" aria-label="User Registration Form">
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="register-name" placeholder="NAME" required aria-label="Name" />
+        </div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="register-username" placeholder="USERNAME" required aria-label="Username" />
+        </div>
+        <div class="input-group">
+            <i class="fas fa-phone"></i>
+            <input type="tel" id="register-phone" placeholder="PHONE NO" required aria-label="Phone Number" pattern="[0-9]{10}" title="Enter a 10-digit phone number" />
+        </div>
+        <div class="input-group">
+            <i class="fas fa-venus-mars"></i>
+            <select id="register-gender" required aria-label="Gender">
+                <option value="" disabled selected>GENDER</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="register-password" placeholder="PASSWORD" required aria-label="Password" />
+        </div>
+        <button type="submit">REGISTER</button>
+    </form>
+  </div>
+</div>
+
+  <!-- Forgot Password Modal for Users -->
+  <!-- Forgot Password Modal -->
+<div id="forgot-user-modal" class="modal">
+  <div class="modal-content">
+      <span id="close-forgot-user" class="close">&times;</span>
+      <h2>Forgot Password</h2>
+      <form id="forgot-password-form">
+          <label for="forgot-username">Username:</label>
+          <input type="text" id="forgot-username" required>
+
+          <label for="forgot-phone">Phone Number:</label>
+          <input type="text" id="forgot-phone" required>
+
+          <label for="new-password">New Password:</label>
+          <input type="password" id="new-password" required>
+
+          <button type="submit">Reset Password</button>
+      </form>
+  </div>
+</div>
+
+  
+  <!-- Forgot Password Modal for Admins -->
+  <div id="forgot-admin-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-forgot-admin">&times;</span>
+      <h2>Forgot Password</h2>
+      <form action="/forgot-password-admin" method="post" aria-label="Admin Forgot Password Form">
+        <div class="input-group">
+          <i class="fas fa-id-badge"></i>
+          <input type="text" name="admin_id" placeholder="ADMIN ID" required aria-label="Admin ID" />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" name="email" placeholder="EMAIL" required aria-label="Email" />
+        </div>
+        <button type="submit">RESET PASSWORD</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="./script.js"></script>
+</body>
+</html>

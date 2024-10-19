@@ -1,0 +1,260 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Color Variables */
+:root {
+    --primary-color: rgb(37, 117, 252); /* Default primary color */
+    --secondary-color: rgb(106, 17, 203); /* Default secondary color */
+    --background-color: rgba(0, 0, 0, 0.8); /* Darker color for panel background */
+    --header-color: rgb(255, 255, 255); /* Header text color */
+    --table-header-color: rgb(37, 117, 252); /* Table header background */
+}
+
+body {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    font-family: 'Arial', sans-serif;
+    color: var(--header-color);
+}
+
+.user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-block-size: 100vh; /* Use min-height for full height */
+    padding: 20px;
+}
+
+.user-panel {
+    background: var(--background-color);
+    border-radius: 15px;
+    padding: 30px;
+    inline-size: 100%;
+    max-inline-size: 600px; /* Set a max-width for larger screens */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Header and User Info */
+.user-header {
+    display: flex;
+    justify-content: space-between; /* Space between username and logout button */
+    align-items: center; /* Align items vertically */
+    margin-block-end: 20px; /* Space below header */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between username and logout button */
+}
+
+h1 {
+    font-size: 2.5em; /* Increased font size for better readability */
+}
+
+h2 {
+    font-size: 1.8em; /* Consistent font size for subheadings */
+    margin-block-end: 15px; /* Spacing below subheadings */
+}
+
+/* Profile Section */
+.profile-section {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Match boxed color to user-panel background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-block-end: 20px; /* Margin below profile section */
+}
+
+/* Category Buttons */
+.category-buttons {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 10px; /* Space between buttons */
+    margin-block-end: 20px; /* Margin below category buttons */
+}
+
+.category-btn {
+    background-color: var(--primary-color);
+    color: var(--header-color);
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.category-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Quiz Section */
+.quiz-section {
+    margin-block-start: 20px; /* Margin above sections */
+    border-block-start: 2px solid var(--primary-color); /* Top border for score section */
+    padding-block-start: 20px; /* Padding above quiz questions */
+}
+
+.question {
+    margin-block-end: 15px; /* Space between questions */
+    padding: 10px; /* Padding for questions */
+    border: 1px solid #ddd; /* Border around questions */
+    border-radius: 4px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for questions */
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px; /* Increased padding for a more substantial button */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Gradient background */
+    border: none; /* Remove border */
+    border-radius: 4px; /* More rounded corners */
+    color: var(--header-color); /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transition effects */
+    font-size: 1em; /* Font size */
+    inline-size: 100%; /* Full width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.5); /* Custom focus outline */
+}
+
+/* Score Section */
+.score-section {
+    padding-block-start: 20px; /* Padding above score display */
+    margin-block-start: 20px; /* Margin above score section */
+}
+
+/* Styles for score history section */
+.score-history {
+    margin-block-start: 20px; /* Margin above score history */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for the section */
+}
+
+table {
+    inline-size: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+    margin-block-start: 10px; /* Margin above the table */
+}
+
+th, td {
+    padding: 10px; /* Padding for table cells */
+    text-align: start; /* Align text to the left */
+}
+
+th {
+    background-color: var(--table-header-color); /* Header background color */
+    color: var(--header-color); /* Header text color */
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Zebra striping for table rows */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .user-panel {
+        inline-size: 90%;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 1.8em; /* Responsive font size for smaller screens */
+    }
+}
+
+/* Quiz Section */
+.quiz-section {
+    margin-top: 20px; /* Margin above sections */
+    border-top: 2px solid var(--primary-color); /* Top border for quiz section */
+    padding: 20px; /* Padding around the quiz section */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+h2 {
+    font-size: 2.5em; /* Increased font size */
+    margin-bottom: 15px; /* Space below the heading */
+    text-align: center; /* Center the header */
+    color: var(--primary-color); /* Primary color for header */
+}
+
+#progress-bar-container {
+    width: 100%; /* Full width for progress bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Background for progress bar */
+    border-radius: 5px; /* Rounded corners */
+    height: 20px; /* Height of progress bar */
+    margin-bottom: 20px; /* Space below progress bar */
+}
+
+#progress-bar {
+    height: 100%; /* Full height */
+    width: 0; /* Start at 0 width */
+    background-color: var(--primary-color); /* Primary color */
+    transition: width 0.5s ease; /* Smooth transition */
+}
+
+.questions-container {
+    display: flex;
+    flex-direction: column; /* Stack questions vertically */
+    gap: 15px; /* Space between questions */
+}
+
+.question-card {
+    padding: 15px; /* Padding for questions */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.15); /* Light background for questions */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transition effects */
+}
+
+.question-card:hover {
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
+.question-card p {
+    font-weight: 500; /* Medium font weight for question text */
+    margin-bottom: 10px; /* Space below the question */
+}
+
+label {
+    display: block; /* Stack labels for better readability */
+    margin: 5px 0; /* Space between labels */
+    padding: 0 10px; /* Padding for labels */
+}
+
+/* Final Submit Button */
+.final-submit-button {
+    background-color: var(--primary-color);
+    padding: 15px 25px; /* Increased padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    color: var(--header-color); /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s, transform 0.2s; /* Transition effects */
+    font-size: 1.1em; /* Larger font size */
+    margin-top: 20px; /* Space above the button */
+}
+
+.final-submit-button:hover {
+    background-color: var(--secondary-color); /* Change color on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}

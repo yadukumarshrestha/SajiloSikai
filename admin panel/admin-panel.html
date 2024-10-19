@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SajiloSikai Admin Panel</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <section class="admin-container">
+        <div class="admin-login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <h1 class="opacity">Admin Panel</h1>
+                
+                <!-- Admin Options -->
+                <div class="admin-options">
+                    <button id="show-add-question" class="option-btn">Add Questions</button>
+                    <button id="show-manage-users" class="option-btn">Manage Users</button>
+                    <button id="show-manage-questions" class="option-btn">Manage Questions</button>
+                </div>
+
+                <!-- Add Questions Form -->
+                <div class="form-section" id="add-question-section" aria-hidden="true">
+                    <h2>Add Questions</h2>
+                    <form id="add-question-form">
+                        <select id="question-category" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="Computer Fundamentals">Computer Fundamentals</option>
+                            <option value="Operating System">Operating System</option>
+                            <option value="Word Processing">Word Processing</option>
+                            <option value="Electronic Spreadsheet">Electronic Spreadsheet</option>
+                            <option value="Presentation System">Presentation System</option>
+                            <option value="Database Management">Database Management</option>
+                            <option value="Webpage Designing">Webpage Designing</option>
+                            <option value="Use of Social Media">Use of Social Media</option>
+                        </select>
+                        <textarea id="question" placeholder="Enter the question" required></textarea>
+                        <input type="text" id="optionA" placeholder="Option A" required />
+                        <input type="text" id="optionB" placeholder="Option B" required />
+                        <input type="text" id="optionC" placeholder="Option C" required />
+                        <input type="text" id="optionD" placeholder="Option D" required />
+                        <select id="correct-option" required>
+                            <option value="" disabled selected>Select Correct Option</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                        <button type="submit" class="opacity">Add Question</button>
+                    </form>
+                </div>
+
+                <!-- Manage Users Section -->
+                <div class="form-section" id="manage-users-section" aria-hidden="true">
+                    <h2>Manage Users</h2>
+                    <div id="add-user-section">
+                        <h3>Add New User</h3>
+                        <form id="add-user-form">
+                            <input type="text" id="new-user-name" placeholder="Name" required />
+                            <input type="text" id="new-username" placeholder="Username" required />
+                            <input type="tel" id="new-user-phone" placeholder="Phone No" pattern="[0-9]{10}" required />
+                            <select id="new-user-gender" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <input type="password" id="new-user-password" placeholder="Password" required minlength="6" />
+                            <button type="submit" class="opacity">Add User</button>
+                        </form>
+                    </div>
+
+                    <input type="text" id="user-search" placeholder="Search Users..." aria-label="Search Users" />
+                    <div id="user-list-container">
+                        <table id="users-table" aria-label="Users Table">
+                            <thead>
+                                <tr>
+                                        <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Phone No</th>
+                                    <th>Gender</th>
+                                    <th>Password</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- User information will be dynamically populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Manage Questions Section -->
+                <div class="form-section" id="manage-questions-section" aria-hidden="true">
+                    <h2>Manage Questions</h2>
+                    <div id="question-table-container">
+                        <table id="questions-table" aria-label="Questions Table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Options</th>
+                                    <th>Correct Option</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Question information will be dynamically populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+    </section>
+
+    <!-- Logout Button -->
+    <button id="logout-btn" class="logout-btn">Logout</button> 
+
+    <!-- Toast Container -->
+    <div id="toast" class="toast"></div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

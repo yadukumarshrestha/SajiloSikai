@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SajiloSikai User Panel</title>
+    <link rel="stylesheet" href="user-style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+
+<body>
+    <section class="user-container">
+        <div class="user-panel">
+            <div class="user-header">
+                <h1>Welcome to SajiloSikai</h1>
+                <div class="user-info">
+                    <span>Username: <strong id="username-display">YourUsername</strong></span>
+                    <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2>User Profile</h2>
+                <p>View and manage your profile here.</p>
+                <button id="edit-profile-btn" class="btn">Edit Profile</button>
+                <div id="profile-info" class="profile-info" aria-hidden="true">
+                    <p>Name: <span id="profile-name">John Doe</span></p>
+                    <p>Phone: <span id="profile-phone">123-456-7890</span></p> <!-- Updated from email to phone -->
+                </div>
+            </div>
+
+            <div class="quiz-container">
+                <h2>Select a Category</h2>
+                <div class="category-buttons">
+                    <button class="category-btn" data-category="Computer Fundamentals">Computer Fundamentals</button>
+                    <button class="category-btn" data-category="Operating System">Operating System</button>
+                    <button class="category-btn" data-category="Word Processing">Word Processing</button>
+                    <button class="category-btn" data-category="Electronic Spreadsheet">Electronic Spreadsheet</button>
+                    <button class="category-btn" data-category="Presentation System">Presentation System</button>
+                    <button class="category-btn" data-category="Database Management">Database Management</button>
+                    <button class="category-btn" data-category="Webpage Designing">Webpage Designing</button>
+                    <button class="category-btn" data-category="Use of Social Media">Use of Social Media</button>
+                </div>
+
+                <div id="quiz-section" class="quiz-section" aria-hidden="true">
+                    <h2>Quiz Questions</h2>
+                    <div id="progress-bar-container" aria-label="Progress Bar">
+                        <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                    </div>
+                    <div id="questions-container" class="questions-container" role="form" aria-labelledby="quiz-section">
+                        <!-- Questions will be loaded here dynamically -->
+                    </div>
+                    <button id="submit-quiz-btn" class="btn submit-btn" aria-label="Submit Quiz">Submit Quiz</button>
+                    <div id="score-section" class="score-section" aria-hidden="true">
+                        <h3>Your Score:</h3>
+                        <p id="score"></p>
+                        <button id="view-score-btn" class="btn" aria-label="View Score History">View Score History</button>
+                    </div>
+                </div>
+                
+                
+                    <div id="score-history" class="score-history" aria-hidden="true">
+                        <h3>Score History</h3>
+                        <button id="clear-score-history-btn" class="btn">Clear Score History</button>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date & Time</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="score-history-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="user-script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+
+</html>
